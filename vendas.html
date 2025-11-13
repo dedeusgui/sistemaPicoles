@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registro de Vendas - Fábrica de Picolés</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h2>Registro de Vendas</h2>
+
+            <form action="processa-venda.php" method="POST">
+                <label for="revendedor">Revendedor:</label>
+                <select id="revendedor" name="revendedor" required>
+                    <option value="">Selecione o Revendedor</option>
+                    <!-- Esses dados virão do banco (tabela Revendedor) -->
+                    <option value="1">Sorveteria Tropical</option>
+                    <option value="2">Gelados do Sul</option>
+                    <option value="3">Frios & Cia</option>
+                </select>
+
+                <label for="tipo_picole">Tipo de Picolé:</label>
+                <select id="tipo_picole" name="tipo_picole" required>
+                    <option value="">Selecione o Tipo</option>
+                    <!-- Dados da tabela Tipos_picoles -->
+                    <option value="1">Normal (com água)</option>
+                    <option value="2">Ao Leite</option>
+                </select>
+
+                <label for="quantidade">Quantidade (lotes):</label>
+                <input type="number" id="quantidade" name="quantidade" min="1" required />
+
+                <label for="valor">Valor Total (R$):</label>
+                <input type="number" id="valor" name="valor" step="0.01" required />
+
+                <label for="numero_serie">Número de Série da Nota:</label>
+                <input type="text" id="numero_serie" name="numero_serie" maxlength="20" required />
+
+                <label for="descricao">Descrição:</label>
+                <textarea
+                    id="descricao"
+                    name="descricao"
+                    rows="3"
+                    placeholder="Observações ou detalhes da venda"
+                ></textarea>
+
+                <label for="data">Data da Venda:</label>
+                <input type="date" id="data" name="data" required />
+
+                <button type="submit">Registrar Venda</button>
+            </form>
+
+            <div class="footer">© 2025 Fábrica de Picolés | Setor de Vendas</div>
+        </div>
+    </body>
+</html>
