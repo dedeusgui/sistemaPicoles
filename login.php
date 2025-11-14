@@ -34,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($resultado->num_rows === 1) {
             $usuario = $resultado->fetch_assoc();
 
-            // Verificar senha (SEM hash - apenas para teste)
             if ($senha === $usuario['senha']) {
                 // Login bem-sucedido - criar sessão
                 $_SESSION['usuario_id'] = $usuario['id'];
