@@ -278,17 +278,12 @@ $notas_fiscais = $conn->query("
 ");
 
 $lotes_notas = $conn->query("
-    SELECT ln.*, 
-           l.quantidade, 
-           tp.nome AS tipo_nome, 
-           nf.numero_serie, 
-           p.preco
+    SELECT ln.*, l.quantidade, tp.nome as tipo_nome, nf.numero_serie, p.preco
     FROM lotes_notas_fiscal ln
     LEFT JOIN lotes l ON ln.id_lote = l.id
     LEFT JOIN tipos_picoles tp ON l.id_tipo_picole = tp.id
     LEFT JOIN notas_fiscal nf ON ln.id_nota_fiscal = nf.id
-    LEFT JOIN picoles p ON p.id = l.id_picole
-    WHERE ln.id_nota_fiscal = nf.id
+    LEFT JOIN picoles p ON p.id_tipo_picole = l.id_tipo_picole
     ORDER BY ln.id DESC
 ");
 ?>
