@@ -244,7 +244,7 @@ $tabela_vendas = $conn->query("
 
     <style>
         body {
-            background: linear-gradient(135deg, #49668c, #f2d272);
+            background: #ecf0f1;
             min-height: 100vh;
             padding: 20px 0;
             overflow-y: auto;
